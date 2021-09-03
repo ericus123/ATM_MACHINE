@@ -20,14 +20,14 @@ const PaymentForm = () => {
 
 	return (
 		<div id="PaymentForm">
-			<Cards onClick={() => handleInputChange()}
+			<Cards 
 				cvc={data.cvc}
 				expiry={data.expiry}
 				focus={data.focus}
 				name={data.name}
 				number={data.number}
 			/>
-			{/* <form action="">
+			<form action="">
 				<input
 					type="number"
 					name="cvc"
@@ -52,7 +52,7 @@ const PaymentForm = () => {
 					placeholder="Card Number"
 					onChange={handleInputChange}
 				/>
-			</form> */}
+			</form>
 		</div>
 	);
 };

@@ -5,6 +5,8 @@ import "react-credit-cards/es/styles-compiled.css";
 import Home from "./comps/home";
 import Dashboard from "./comps/Dashboard";
 import Navigation from "./Navbar";
+import NotFound from "./comps/404";
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
        <Switch>
          <Route exact path="/" component={Home}/>
          <Route exact path="/account" component={Dashboard}/>
+         <Route component={NotFound}/>
        </Switch>
      </Router>
     </div>
