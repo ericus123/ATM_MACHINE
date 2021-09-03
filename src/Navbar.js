@@ -1,19 +1,28 @@
 import { Button, Container, Modal, Nav, Navbar } from "react-bootstrap";
 import { Bank} from "react-bootstrap-icons";
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import {useSelector } from "react-redux";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+
 
 const Navigation = () => {
 
     const [show,setShow] = useState(false);
-
+    const isLoggedIn = useSelector(state => state.CardReducer.isLoggedIn);
+  const history = useHistory();
+    useEffect(() => {
+      if(isLoggedIn){
+          history.push("/account");
+      }
+    }, [isLoggedIn]);
 return (      
 <Navbar style={{background: "rgb(231, 236, 234)"}} variant="light">
     <Container>
-    <Navbar.Brand href="/"><Bank style={{margin:"0px", padding:"0px", width:"5%"}}/> <span style={{fontWeight:"bolder"}} className="mt-2">AMANI Bank</span></Navbar.Brand>
+    <Navbar.Brand><Link to={"/"} className="text-decoration-none"><Bank style={{margin:"0px", padding:"0px"}}/> <span style={{fontWeight:"bolder"}} className="mt-2">AMANI Bank</span></Link></Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="/account">My account</Nav.Link>
+      <Nav.Link><Link to={"/account"} className="text-decoration-none"> My account</Link></Nav.Link>
       <Nav.Link onClick={() => setShow(true)}>
-          {/* <ArrowLeftCircleFill color={"gray"} style={{ padding:"0px", margin:"0px"}}/>  */}
           Logout</Nav.Link>
     </Nav>
     </Container>

@@ -2,7 +2,9 @@
     {
         "cvc":"123",
         "valid_thru":"",
-        "number":"11112222333344445555",
-        "name":"AMANI Eric" 
+        "number":"1111222233334444",
+        "name":"AMANI Eric",
+        "pincode":"12345678",
+        "amount":"140000"
     }
 ]
