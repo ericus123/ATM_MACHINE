@@ -13,7 +13,7 @@ export const saveCardRequest = (card) => (dispatch) => {
         });
   
     } catch (error) {
-        
+        console.log("");
     }
 };
 export const checkPinCode = (card,code) => (dispatch) => {
