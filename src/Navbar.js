@@ -16,6 +16,7 @@ const Navigation = () => {
           history.push("/account");
       }
     }, [isLoggedIn]);
+    
 return (      
 <Navbar style={{background: "rgb(231, 236, 234)"}} variant="light">
     <Container>
