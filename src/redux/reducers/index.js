@@ -1,7 +1,10 @@
-import { combineReducers } from "redux";
-import CardReducer from "./card";
-// function that contains all reducer objects.
-const allReducers = combineReducers({
-CardReducer
+import { combineReducers } from "@reduxjs/toolkit";
+import { default as authReducer } from "../actions/authSlice";
+import { default as cardsReducer } from "../actions/cardsSlice";
+
+const rootReducer = combineReducers({
+    cards: cardsReducer,
+    auth: authReducer,
 });
-export default allReducers;
+
+export default rootReducer;
